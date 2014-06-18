@@ -1,0 +1,1 @@
+include 'xylocore-cassandra-test', 'xylocore-cassandra-core'

@@ -1,0 +1,25 @@
+dependencies {
+
+    compile ("com.datastax.cassandra:cassandra-driver-core:2.+") {
+        exclude group: "org.slf4j", module: "slf4j-log4j12"
+        exclude group: "log4j",     module: "log4j"
+    }
+
+    compile "org.slf4j:slf4j-api:1.7.7"
+    compile "org.apache.commons:commons-lang3:3.3.2"
+
+    testCompile ("com.xylocore:xylocore-cassandra-test:0.0.1-SNAPSHOT") {
+        exclude group: "org.slf4j", module: "slf4j-log4j12"
+        exclude group: "log4j",     module: "log4j"
+    }
+
+    testRuntime "ch.qos.logback:logback-classic:1.1.2"
+}
+
+publishing {
+    publications {
+        mavenJava(MavenPublication) {
+            from components.java
+        }
+    }
+}
